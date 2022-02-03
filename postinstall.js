@@ -64,7 +64,7 @@ async function getData () {
         backers: collectiveData['backersCount'].toLocaleString (),
         balance: Math.floor (collectiveData['balance'] / 100).toLocaleString (),
         budget: Math.floor (collectiveData['yearlyIncome'] / 100).toLocaleString (),
-        stars: githubData['stargazers_count'].toLocaleString (),
+        // stars: githubData['stargazers_count'].toLocaleString (),
         forks: githubData['forks_count'].toLocaleString (),
         size: (githubData['size'] / 1000000).toFixed (2)
     }
@@ -80,7 +80,7 @@ async function main () {
     const data = await getData()
 
     colorFunctions['blue'] (ascii.join ('\n'))
-    colorFunctions['red'] (pad (`Stars: ${data.stars}`))
+    // colorFunctions['red'] (pad (`Stars: ${data.stars}`))
     colorFunctions['red'] (pad (`Forks: ${data.forks}`))
     colorFunctions['red'] (pad (`Contributors: ${data.contributors}`))
     colorFunctions['red'] (pad (`Size: ${data.size}MB`))
